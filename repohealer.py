@@ -75,9 +75,10 @@ class RepoHealer:
         '''
         Load Config from file
         '''
-        if os.path.exists('./config/' + reponame + '.cfg'):
+        configpath = os.path.join('./config/', reponame, '.cfg')
+        if os.path.exists(configpath):
             config = ConfigParser()
-            config.read('./config/' + reponame + '.cfg')
+            config.read(configpath)
             loglevel = config.get('log', 'level')
             logfile = config.get('log', 'file')
             repopath = config.get('repo', 'path')

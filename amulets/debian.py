@@ -20,7 +20,7 @@ class Debian(amulet.Amulet):
      
     def _uncompress(self, uri):
         files = gzip.open(uri, 'rb')
-        tmpfile = "/tmp/Packages" + str(int(time.time()))
+        tmpfile = os.path.join("/tmp/Packages", str(int(time.time())))
         outfile = open(tmpfile, 'w') #aca hay que cambiarlo para truncar el archivo
         outfile.write(files.read())
         outfile.close()
