@@ -1,0 +1,15 @@
+RepoHealer
+====================
+
+
+RepoHealer is a Python script to repair Software repository packages using checksum files.
+It uses plugins called "Amulets" to check a given repository and repair the packages with bad checksums
+Based on MD5 repo-check script first developed by Luis Zarate in 2011
+
+Available Amulets:
+    debian: works with packages.gz files in debian-like repos
+
+TODO:
+    Create more Amulets
+    Check if class inherites from class Amulet
+    Create package
