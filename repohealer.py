@@ -75,7 +75,7 @@ class RepoHealer:
         '''
         Load Config from file
         '''
-        configpath = os.path.join('./config/', reponame, '.cfg')
+        configpath = os.path.join('./config/', reponame + '.cfg')
         if os.path.exists(configpath):
             config = ConfigParser()
             config.read(configpath)
@@ -101,7 +101,7 @@ class RepoHealer:
                 self._amulet.check_with(nextPath)
             else:
                 # Prevent /ubuntu/ubuntu/...
-                if innerpack is not os.path.basename(path) and os.path.isdir(nextPath):
+                if innerpack != os.path.basename(path) and os.path.isdir(nextPath):
                     self._recursive_search(nextPath)
                     
     def start (self):
